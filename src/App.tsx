@@ -1,12 +1,17 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { useInView } from "framer-motion"
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import '/styles/Main.scss'
 
 function App() {
 
-  const occasion: string = "";
-  const recipient: string = "Tanya";
+  // app
+  const appRef = useRef(null);
+  const appIsInView = useInView({ root: appRef })
+  // header
+  const headerRef = useRef(null);
+  const headerIsInView = useInView(headerRef);
 
   const userInformation = {
     name: "Adam"
@@ -19,12 +24,15 @@ function App() {
   }
 
   return (
-    <>
-      <header>
+    <div id="App" ref={appRef} style={{ overflow: "scroll" }}>
+      <header ref={headerRef}>
         <h1>{buildData.occasion}, {buildData.recipient}!</h1>
         <p><i>07-30-24</i></p>
       </header>
-    </>
+      <div id="Introduction">
+        <h1>Introduction</h1>
+      </div>
+    </div>
   )
 }
 
