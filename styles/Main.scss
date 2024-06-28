@@ -5,7 +5,9 @@
 }
 
 body {
-  background: #F7F7F7;
+  /* background: #F7F7F7; */
+  background: #000000;
+  color: white;
 }
 
 header {
@@ -17,8 +19,11 @@ header {
 }
 
 #Introduction {
-  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+section {
+  min-height: 100vh;
 }
