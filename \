@@ -3,11 +3,10 @@ import { useInView } from "framer-motion"
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Header from './sections/Header'
-import Introduction from './sections/Introduction.tsx'
-import SecA from './sections/SecA.tsx'
 import '/styles/Main.scss'
 
 function App() {
+
   // app
   const appRef = useRef(null);
   const appIsInView = useInView(appRef)
@@ -43,11 +42,13 @@ function App() {
 
   return (
     <div id="App" ref={appRef} style={{ overflow: "scroll" }}>
-      <div ref={headerRef}>
-        <Header buildData={buildData}/>
-      </div>
-      <Introduction />
-      <SecA />
+      <Header ref={headerRef} buildData={buildData}/>
+      <section id="Introduction">
+        <h1>Introduction</h1>
+      </section>
+      <section id="TestOne">
+        <h1>Test Section</h1>
+      </section>
     </div>
   )
 }
