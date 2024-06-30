@@ -20,6 +20,3 @@
   Click on the Vite and React logos to learn more
 </p>
 
--- Current --
-I need to get the title headings to animate in when you scroll down.
-I want a fade in / fade up(?) effect and have other elements animate in independently. 

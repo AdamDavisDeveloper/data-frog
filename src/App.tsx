@@ -29,18 +29,6 @@ function App() {
     date: "07-30-24" 
   }
 
-  useEffect(() => {
-    console.log("Header is in view: ", headerIsInView);
-  }, [headerIsInView]);
-
-  useEffect(() => {
-    console.log("App is in view", appIsInView);
-  }, [appIsInView]);
-
-  useEffect(() => {
-    console.log("Section is in view", sectionIsInView);
-  }, [sectionIsInView]);
-
   return (
     <div id="App" ref={appRef} style={{ overflow: "scroll" }}>
       <div ref={headerRef}>
