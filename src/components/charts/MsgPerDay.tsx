@@ -7,43 +7,48 @@ type MessageDay = {
     Tanya: number;
 }
 
-
 const MessagesPerDayChart = () => {
     const msgData: MessageDay[] = messagesPerDay as MessageDay[];
+    const reversedData = [...msgData].reverse();
     
     return (
-        <div style={{ height: 400 }}>
+        <div style={{ height: 1000 }}>
             <ResponsiveBar
-                data={msgData}
+                data={reversedData}
                 keys={['Adam', 'Tanya']}
                 indexBy="date"
-                margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
-                padding={0.3}
+                margin={{ top: 0, right: 60, bottom: 0, left: 100 }}
+                padding={0.4}
+                layout="horizontal"
                 groupMode="stacked"
-                colors={{ scheme: 'nivo' }}
-                borderColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                colors={{ scheme: 'purpleRed_green' }}
+                borderColor="transparent"
+                borderWidth={0}
                 axisTop={null}
                 axisRight={null}
                 axisBottom={{
-                    tickSize: 5,
-                    tickPadding: 5,
+                    tickSize: 0,
+                    tickPadding: 0,
                     tickRotation: 0,
                     legend: 'date',
                     legendPosition: 'middle',
-                    legendOffset: 32
+                    legendOffset: 40,
+                    format: () => '' // Hide axis labels
                 }}
                 axisLeft={{
-                    tickSize: 5,
-                    tickPadding: 5,
+                    tickSize: 0,
+                    tickPadding: 0,
                     tickRotation: 0,
-                    legend: 'message count',
                     legendPosition: 'middle',
-                    legendOffset: -40
+                    legendOffset: -40,
+                    format: () => '' // Hide axis labels
                 }}
-                labelTextColor={{ from: 'color', modifiers: [['darker', 1.6]] }}
+                tooltip={({ id, value, indexValue }) => (
+                    <strong> {indexValue}: {id} - {value} </strong>
+                )}
+                enableLabel={false}
+                enableGridY={false}
                 animate={true}
-                // motionStiffness={90}
-                // motionDamping={15}
             />
         </div>
     );

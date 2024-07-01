@@ -23,11 +23,13 @@ export default function SecA() {
           opacity: SecAInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
       }}>
-        <h1>Section A</h1>
-        <p>This is a playground test area</p>
+        <div className="title">
+          <h1>Messages Per Day</h1>
+          <p>WORLD RECORD: 274 messages on 12/28/23</p>
+        </div>
       </div>
-        <MessagesPerDayChart />
-
+      
+      <MessagesPerDayChart />
     </section>
   )
 }
