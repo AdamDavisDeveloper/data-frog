@@ -1,4 +1,4 @@
-node_modules
+node_modules/
 *.csv
 chat.txt
 _chat.txt
