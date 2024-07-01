@@ -12,8 +12,8 @@ def save_json(data, file_path):
 def preprocess_data(data):
     count_per_day = defaultdict(lambda: defaultdict(int))
     for entry in data:
-        date = entry["Date"].strip("[]")
-        sender = entry["Sender"]
+        date = entry.get("Date", "").strip("[]")
+        sender = entry.get("Sender", "Unknown") 
         count_per_day[date][sender] += 1
 
     result = []
@@ -25,8 +25,10 @@ def preprocess_data(data):
 
 if __name__ == "__main__":
     input_path = 'chat.json'
-    output_path = 'chat-dates.json'
+    output_path = 'chat-edited.json'
 
     data = read_json(input_path)
+
     processed_data = preprocess_data(data)
+
     save_json(processed_data, output_path)
