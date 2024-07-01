@@ -1,7 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
 import { useInView } from "framer-motion"
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Header from './sections/Header'
 import Introduction from './sections/Introduction.tsx'
 import SecA from './sections/SecA.tsx'

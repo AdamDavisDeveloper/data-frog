@@ -1,0 +1,7 @@
+node_modules
+*.csv
+chat.txt
+_chat.txt
+calls.txt
+chat.json
+messagesPerDay.json
