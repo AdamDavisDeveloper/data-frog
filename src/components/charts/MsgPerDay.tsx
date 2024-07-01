@@ -17,7 +17,7 @@ const MessagesPerDayChart = () => {
                 data={reversedData}
                 keys={['Adam', 'Tanya']}
                 indexBy="date"
-                margin={{ top: 0, right: 60, bottom: 0, left: 100 }}
+                margin={{ top: 0, right: 100, bottom: 0, left: 10 }}
                 padding={0.4}
                 layout="horizontal"
                 groupMode="stacked"
